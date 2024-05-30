@@ -31,7 +31,6 @@ const render = () => {
             render();
         })
         li.querySelector('.todo-remove').addEventListener('click', event => {
-            event.target.parentNode.parentNode.remove();
             toDoList.splice(toDoList.indexOf(item), 1);
             localStorage.setItem("toDoList", JSON.stringify(toDoList));
             render();
@@ -42,7 +41,6 @@ const render = () => {
 render();
 
 todoControl.addEventListener('submit', (event) => {
-    console.log("sdfsdfsdfsdfsdf");
     event.preventDefault()
     const newToDo = {
         text: headerInput.value,
